@@ -1,0 +1,377 @@
+/* ==========================================================================
+   1. GLOBAL STYLES & RESET
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #FFF0F2; 
+    color: #4A3B3D; 
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   2. HEADER & NAVIGATION
+   ========================================================================== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: rgba(255, 255, 255, 0.75); 
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(219, 142, 153, 0.2); 
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #4A3B3D;
+    letter-spacing: 0.5px;
+}
+
+.logo-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #DB8E99; 
+}
+
+.logo span {
+    color: #C05C6B; 
+}
+
+.navbar-toggler {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.navbar-toggler span {
+    background-color: #4A3B3D;
+    height: 3px;
+    width: 28px;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar-toggler:hover span {
+    background-color: #C05C6B;
+}
+
+/* ==========================================================================
+   3. LANDING / INDEX PAGE STYLES
+   ========================================================================== */
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+.hero {
+    width: 100%;
+    max-width: 1200px;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    width: 100%;
+}
+
+.hero_card {
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(219, 142, 153, 0.3);
+    backdrop-filter: blur(16px);
+    padding: 50px 60px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(219, 142, 153, 0.15);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+    max-width: 500px;
+    width: 100%;
+}
+
+.hero_card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 45px rgba(192, 92, 107, 0.25);
+    border-color: rgba(192, 92, 107, 0.4);
+}
+
+.hero_card h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 30px;
+    color: #4A3B3D;
+    letter-spacing: -0.5px;
+}
+
+.hero_btn {
+    display: inline-block;
+    padding: 14px 35px;
+    background: #C05C6B; 
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 30px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 4px 15px rgba(192, 92, 107, 0.3);
+}
+
+.hero_btn:hover {
+    background: #A64453;
+    transform: scale(1.03);
+    box-shadow: 0 6px 20px rgba(192, 92, 107, 0.45);
+}
+
+.quote_text {
+    font-size: 0.95rem;
+    color: #9E8488;
+    font-style: italic;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+/* ==========================================================================
+   4. TO-DO LIVE COUNTDOWN & LAYOUT STYLES
+   ========================================================================== */
+.todo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    margin-top: 100px;
+}
+
+.todo-card {
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(219, 142, 153, 0.15);
+    border: 1px solid rgba(219, 142, 153, 0.2);
+    width: 100%;
+    max-width: 480px;
+}
+
+.todo-card h1 {
+    color: #4A3B3D;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Live Timer Dashboard Style */
+.global-deadline-box {
+    background-color: #FFF9FA;
+    border: 1px dashed #DB8E99;
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.deadline-setter label {
+    font-size: 13px;
+    font-weight: 700;
+    color: #4A3B3D;
+}
+
+.deadline-setter input[type="time"] {
+    padding: 5px 10px;
+    border: 1px solid #F3D1D6;
+    border-radius: 10px;
+    outline: none;
+    margin-left: 5px;
+}
+
+.countdown-timer {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #C05C6B;
+    margin-top: 10px;
+    letter-spacing: 0.5px;
+}
+
+.todo-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+#taskInput {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #F3D1D6;
+    background-color: #FFF9FA;
+    border-radius: 25px;
+    font-size: 15px;
+    color: #4A3B3D;
+    outline: none;
+}
+
+#taskInput:focus {
+    border-color: #C05C6B;
+}
+
+.time-inputs {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.time-inputs label {
+    font-size: 13px;
+    color: #9E8488;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+}
+
+.time-inputs input[type="time"] {
+    padding: 8px 12px;
+    border: 2px solid #F3D1D6;
+    background-color: #FFF9FA;
+    border-radius: 15px;
+    color: #4A3B3D;
+    outline: none;
+}
+
+#addTaskBtn {
+    width: 100%;
+    padding: 12px 25px;
+    background-color: #C05C6B;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+#addTaskBtn:hover {
+    background-color: #A64453;
+}
+
+/* Updated List Item: Displaying Text and Time Side-by-Side */
+#taskList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#taskList li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 18px;
+    background: #FFF9FA;
+    border: 1px solid #FCEAEF;
+    color: #5C4B4D;
+    cursor: pointer;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    gap: 15px;
+}
+
+#taskList li:hover {
+    background: #FEEFF2;
+    transform: translateX(3px);
+}
+
+.task-text {
+    flex: 1;
+    word-break: break-word;
+}
+
+/* Inline Time Badge styling */
+.task-time-badge {
+    font-size: 12px;
+    color: #C05C6B;
+    font-weight: 700;
+    white-space: nowrap;
+    background-color: rgba(192, 92, 107, 0.08);
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+/* THE CROSS-OUT EFFECT */
+#taskList li.completed {
+    text-decoration: line-through;
+    color: #C4B2B4;
+    background: #F5ECEE;
+    border-color: #EBE0E2;
+}
+
+#taskList li.completed .task-time-badge {
+    color: #C4B2B4;
+    background-color: rgba(0, 0, 0, 0.03);
+    text-decoration: line-through;
+}
+
+/* ==========================================================================
+   5. RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+@media (max-width: 600px) {
+    header {
+        padding: 15px 20px;
+    }
+    .hero_card {
+        padding: 40px 30px;
+    }
+    .hero_card h1 {
+        font-size: 2rem;
+    }
+}
+
+/* ==========================================================================
+   BACK BUTTON STYLES
+   ========================================================================== */
+.back-btn {
+    text-decoration: none;
+    color: #C05C6B; /* Berry pink text */
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 8px 16px;
+    border: 2px solid #F3D1D6; /* Soft pink border */
+    border-radius: 20px;
+    transition: all 0.2s ease-in-out;
+    margin-left: auto; /* Pushes the button to center-right, before the hamburger */
+    margin-right: 20px;
+}
+
+.back-btn:hover {
+    background-color: #C05C6B;
+    color: #ffffff; /* Inverts colors on hover */
+    border-color: #C05C6B;
+    transform: scale(1.05);
+}

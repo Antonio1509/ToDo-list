@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> To Do List </title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <header>
+        <h2 class="logo">
+            <img src="https://i.ibb.co/wrrJRRCp/download.jpg" alt=" MD logo " class="logo-image">
+            ToDo<span>list</span>
+
+            <a href="./index.html" class="back-btn">← Back</a>
+            
+        </h2>
+        <input type="checkbox" id="menu-toggle" hidden>
+        <label for="menu-toggle" class="navbar-toggler">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+     </header>
+
+     <main class="todo-container">
+        <div class="todo-card">
+            <h1>Activities</h1>
+            
+            <div class="global-deadline-box">
+                <div class="deadline-setter">
+                    <label>Set Day Finish Time: <input type="time" id="globalDeadline"></label>
+                </div>
+                <div id="countdownDisplay" class="countdown-timer">No deadline set</div>
+            </div>
+
+            <div class="todo-input-group">
+                <input type="text" id="taskInput" placeholder="Enter a new activity...">
+                
+                <div class="time-inputs">
+                    <label>Start: <input type="time" id="startTime"></label>
+                    <label>End: <input type="time" id="endTime"></label>
+                </div>
+
+                <button id="addTaskBtn">Add</button>
+            </div>
+
+            <ul id="taskList"></ul>
+        </div>
+     </main>
+
+     <script src="todo.js"></script>
+</body>
+</html>
